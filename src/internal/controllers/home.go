@@ -3,7 +3,10 @@ package controllers
 import (
 	"log"
 	"net/http"
+	"path/filepath"
 	"src/internal/config"
+
+	"github.com/sirupsen/logrus"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
@@ -19,5 +22,10 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	http.ServeFile(w, r, config.App.PublicFolder)
+	p, err := filepath.Abs(filepath.Join(".", config.App.PublicFolder))
+	if err != nil {
+		logrus.Fatal(err)
+	}
+
+	http.ServeFile(w, r, p)
 }

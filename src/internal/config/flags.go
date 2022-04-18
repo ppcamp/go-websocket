@@ -43,6 +43,6 @@ var Flags = []cli.Flag{
 		Name:        "app_public_folder",
 		Destination: &App.PublicFolder,
 		EnvVars:     []string{"APP_PUBLIC_FOLDER"},
-		Value:       "/home/ppcamp/Desktop/me/go-websocket/public/index.html",
+		Value:       "../public/index.html",
 	},
 }

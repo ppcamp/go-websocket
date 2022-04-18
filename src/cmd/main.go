@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/urfave/cli/v2"
 	"os"
 	"src/internal/app"
 	"src/internal/config"
+
+	"github.com/urfave/cli/v2"
 )
 
 func main() {
